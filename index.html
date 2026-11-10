@@ -7,27 +7,30 @@
 <title>Student Resources UZ</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#202b3c}
-header{background:#123b68;color:white;text-align:center;padding:35px 15px}
-header h1{margin:0 0 12px}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#243247}
+header{background:linear-gradient(135deg,#102e50,#1767a5);color:white;text-align:center;padding:45px 15px}
+header h1{font-size:34px;margin:0 0 12px}
+header p{font-size:17px}
 nav{margin-top:22px}
-button{padding:11px 18px;margin:4px;border:0;border-radius:8px;cursor:pointer;font-weight:bold}
-button.active{background:#f4bd45;color:#172b45}
-main{max-width:1000px;margin:30px auto;padding:15px}
+button{padding:11px 20px;margin:4px;border:0;border-radius:8px;cursor:pointer;font-weight:bold}
+button.active{background:#ffc857;color:#172b45}
+main{max-width:1050px;margin:35px auto;padding:15px}
 h2{color:#123b68}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:white;padding:23px;border-radius:12px;box-shadow:0 3px 12px #0001}
-.card h3{margin-top:0;color:#174b7e}
-.card a{color:#1767b2;text-decoration:none;font-weight:bold}
-footer{text-align:center;padding:25px;color:#687386}
+.intro{text-align:center;margin-bottom:30px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:white;padding:25px;border-radius:14px;box-shadow:0 4px 15px #00000012;transition:.2s}
+.card:hover{transform:translateY(-4px)}
+.card h3{color:#1767a5;margin-top:0}
+.card p{line-height:1.6;color:#526174}
+.card a{display:inline-block;margin-top:10px;color:#1767a5;text-decoration:none;font-weight:bold}
+footer{text-align:center;background:#102e50;color:white;padding:25px;margin-top:40px}
 </style>
 </head>
 <body>
 
 <header>
-<h1 id="title">Student Resources UZ</h1>
+<h1>Student Resources UZ</h1>
 <p id="subtitle">Talabalar uchun bepul ta'lim resurslari</p>
-
 <nav>
 <button id="uzBtn" class="active" onclick="changeLang('uz')">O‘zbekcha</button>
 <button id="ruBtn" onclick="changeLang('ru')">Русский</button>
@@ -36,8 +39,10 @@ footer{text-align:center;padding:25px;color:#687386}
 </header>
 
 <main>
+<div class="intro">
 <h2 id="welcome">Xush kelibsiz!</h2>
-<p id="description">Bu saytda talabalar uchun foydali darslar va o‘quv materiallari joylashtirilgan.</p>
+<p id="description">Talabalar uchun foydali darslar va o‘quv materiallari.</p>
+</div>
 
 <div class="cards">
 
@@ -56,6 +61,7 @@ footer{text-align:center;padding:25px;color:#687386}
 <div class="card">
 <h3 id="economicsTitle">Iqtisodiyot</h3>
 <p id="economicsText">Iqtisodiyot faniga oid foydali ma'lumotlar.</p>
+<a href="economics/first-lesson.md" id="economicsLink">Darsni o‘qish →</a>
 </div>
 
 <div class="card">
@@ -69,63 +75,50 @@ footer{text-align:center;padding:25px;color:#687386}
 <footer id="footer">© 2026 Student Resources UZ | Barcha huquqlar himoyalangan</footer>
 
 <script>
-const translations = {
-uz: {
+const translations={
+uz:{
 subtitle:"Talabalar uchun bepul ta'lim resurslari",
 welcome:"Xush kelibsiz!",
-description:"Bu saytda talabalar uchun foydali darslar va o‘quv materiallari joylashtirilgan.",
-wordText:"Word dasturini noldan o‘rganing.",
-excelText:"Excel dasturini bosqichma-bosqich o‘rganing.",
-economicsText:"Iqtisodiyot faniga oid foydali ma'lumotlar.",
-computerText:"Kompyuterdan foydalanishni o‘rganing.",
-wordLink:"Darsni o‘qish →",
-excelLink:"Darsni o‘qish →",
+description:"Talabalar uchun foydali darslar va o‘quv materiallari.",
+wordTitle:"Microsoft Word",wordText:"Word dasturini noldan o‘rganing.",wordLink:"Darsni o‘qish →",
+excelTitle:"Microsoft Excel",excelText:"Excel dasturini bosqichma-bosqich o‘rganing.",excelLink:"Darsni o‘qish →",
+economicsTitle:"Iqtisodiyot",economicsText:"Iqtisodiyot faniga oid foydali ma'lumotlar.",economicsLink:"Darsni o‘qish →",
+computerTitle:"Kompyuter savodxonligi",computerText:"Kompyuterdan foydalanishni o‘rganing.",
 footer:"© 2026 Student Resources UZ | Barcha huquqlar himoyalangan"
 },
-ru: {
+ru:{
 subtitle:"Бесплатные образовательные ресурсы для студентов",
 welcome:"Добро пожаловать!",
-description:"На этом сайте размещены полезные уроки и учебные материалы для студентов.",
-wordTitle:"Microsoft Word",
-wordText:"Изучайте Word с нуля.",
-excelText:"Изучайте Excel шаг за шагом.",
-economicsTitle:"Экономика",
-economicsText:"Полезные материалы по экономике.",
-computerTitle:"Компьютерная грамотность",
-computerText:"Учитесь пользоваться компьютером.",
-wordLink:"Читать урок →",
-excelLink:"Читать урок →",
+description:"Полезные уроки и учебные материалы для студентов.",
+wordTitle:"Microsoft Word",wordText:"Изучайте Word с нуля.",wordLink:"Читать урок →",
+excelTitle:"Microsoft Excel",excelText:"Изучайте Excel шаг за шагом.",excelLink:"Читать урок →",
+economicsTitle:"Экономика",economicsText:"Полезные материалы по экономике.",economicsLink:"Читать урок →",
+computerTitle:"Компьютерная грамотность",computerText:"Учитесь пользоваться компьютером.",
 footer:"© 2026 Student Resources UZ | Все права защищены"
 },
-en: {
+en:{
 subtitle:"Free educational resources for students",
 welcome:"Welcome!",
-description:"This website provides useful lessons and learning materials for students.",
-wordTitle:"Microsoft Word",
-wordText:"Learn Microsoft Word from the beginning.",
-excelText:"Learn Excel step by step.",
-economicsTitle:"Economics",
-economicsText:"Useful materials about economics.",
-computerTitle:"Computer Literacy",
-computerText:"Learn how to use a computer.",
-wordLink:"Read lesson →",
-excelLink:"Read lesson →",
+description:"Useful lessons and learning materials for students.",
+wordTitle:"Microsoft Word",wordText:"Learn Word from the beginning.",wordLink:"Read lesson →",
+excelTitle:"Microsoft Excel",excelText:"Learn Excel step by step.",excelLink:"Read lesson →",
+economicsTitle:"Economics",economicsText:"Useful materials about economics.",economicsLink:"Read lesson →",
+computerTitle:"Computer Literacy",computerText:"Learn how to use a computer.",
 footer:"© 2026 Student Resources UZ | All rights reserved"
 }
 };
 
-function changeLang(lang) {
-const t = translations[lang];
-for (const id in t) {
-const element = document.getElementById(id);
-if (element) element.textContent = t[id];
+function changeLang(lang){
+const t=translations[lang];
+for(const id in t){
+const el=document.getElementById(id);
+if(el)el.textContent=t[id];
 }
-document.documentElement.lang = lang;
-["uz","ru","en"].forEach(function(l) {
+document.documentElement.lang=lang;
+["uz","ru","en"].forEach(l=>{
 document.getElementById(l+"Btn").classList.toggle("active",l===lang);
 });
 }
 </script>
-
 </body>
 </html>
