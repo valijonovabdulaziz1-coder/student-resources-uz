@@ -4,138 +4,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Resources UZ</title>
+<title>Student Resources — Ta'lim platformasi</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#243247}
-header{background:linear-gradient(135deg,#102e50,#1767a5);color:white;text-align:center;padding:40px 15px}
-header h1{margin:0 0 12px}
-nav{margin-top:20px}
-button{padding:11px 18px;margin:4px;border:0;border-radius:8px;cursor:pointer;font-weight:bold}
-button.active{background:#ffc857;color:#172b45}
-main{max-width:1100px;margin:35px auto;padding:15px}
-.intro{text-align:center;margin-bottom:30px}
-h2{color:#123b68}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:white;padding:23px;border-radius:14px;box-shadow:0 4px 15px #00000012}
-.card h3{color:#1767a5;margin-top:0}
-.card p{line-height:1.6;color:#526174}
-.card a{display:block;margin:12px 0;color:#1767a5;text-decoration:none;font-weight:bold}
-.card a:hover{text-decoration:underline}
-.lesson-list{margin-top:15px;border-top:1px solid #e2e8f0;padding-top:10px}
-footer{text-align:center;background:#102e50;color:white;padding:25px;margin-top:40px}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: linear-gradient(135deg, #123c69, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+.languages {
+    text-align: center;
+    padding: 20px;
+}
+
+.languages button {
+    padding: 10px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.languages button:hover {
+    background: #123c69;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin: 20px 0 25px;
+    font-size: 27px;
+}
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    color: #1d4ed8;
+}
+
+.card p {
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.card a {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 11px 17px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.card a:hover {
+    background: #123c69;
+}
+
+.lesson-list {
+    margin-top: 15px;
+}
+
+.lesson-list a {
+    display: block;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+footer {
+    margin-top: 45px;
+    padding: 25px;
+    text-align: center;
+    background: #123c69;
+    color: white;
+}
+
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 25px;
+    }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>Student Resources UZ</h1>
-<p id="subtitle">Talabalar uchun bepul ta'lim resurslari</p>
-<nav>
-<button id="uzBtn" class="active" onclick="changeLang('uz')">O‘zbekcha</button>
-<button id="ruBtn" onclick="changeLang('ru')">Русский</button>
-<button id="enBtn" onclick="changeLang('en')">English</button>
-</nav>
+    <h1 id="siteTitle">Student Resources</h1>
+    <p id="siteDescription">Talabalar uchun bepul ta'lim platformasi</p>
 </header>
 
-<main>
-<div class="intro">
-<h2 id="welcome">Xush kelibsiz!</h2>
-<p id="description">Talabalar uchun foydali darslar va o‘quv materiallari.</p>
+<div class="languages">
+    <button onclick="changeLanguage('uz')">O'zbekcha</button>
+    <button onclick="changeLanguage('ru')">Русский</button>
+    <button onclick="changeLanguage('en')">English</button>
 </div>
 
-<div class="cards">
+<main class="container">
 
-<div class="card">
-<h3 id="wordTitle">Microsoft Word</h3>
-<p id="wordText">Word dasturini noldan o‘rganing.</p>
-<a href="word/first-lesson.md" id="wordLink">Darsni o‘qish →</a>
-</div>
+    <h2 class="section-title" id="coursesTitle">O'quv kurslari</h2>
 
-<div class="card">
-<h3 id="excelTitle">Microsoft Excel</h3>
-<p id="excelText">Excel dasturini bosqichma-bosqich o‘rganing.</p>
-<a href="excel/first-lesson.md" id="excelLink">Darsni o‘qish →</a>
-</div>
+    <div class="courses">
 
-<div class="card">
-<h3 id="economicsTitle">Iqtisodiyot</h3>
-<p id="economicsText">Iqtisodiyot fanidan 10 ta dars.</p>
-<div class="lesson-list" id="lessonList">
-<a href="economics/10-lessons.md#lesson-1">1-dars. Iqtisodiyotga kirish →</a>
-<a href="economics/10-lessons.md#lesson-2">2-dars. Bozor iqtisodiyoti →</a>
-<a href="economics/10-lessons.md#lesson-3">3-dars. Talab va taklif →</a>
-<a href="economics/10-lessons.md#lesson-4">4-dars. Raqobat →</a>
-<a href="economics/10-lessons.md#lesson-5">5-dars. Pul va uning funksiyalari →</a>
-<a href="economics/10-lessons.md#lesson-6">6-dars. Inflyatsiya →</a>
-<a href="economics/10-lessons.md#lesson-7">7-dars. Banklar va kredit →</a>
-<a href="economics/10-lessons.md#lesson-8">8-dars. Soliq va soliq siyosati →</a>
-<a href="economics/10-lessons.md#lesson-9">9-dars. Yalpi ichki mahsulot →</a>
-<a href="economics/10-lessons.md#lesson-10">10-dars. Ishsizlik va bandlik →</a>
-</div>
-</div>
+        <div class="card">
+            <h2 id="wordTitle">Microsoft Word</h2>
+            <p id="wordDescription">
+                Matnli hujjatlar yaratish, tahrirlash va bezashni o'rganing.
+            </p>
+            <a href="word/10-lessons.md" id="wordLink">
+                10 ta darsni boshlash
+            </a>
+        </div>
 
-<div class="card">
-<h3 id="computerTitle">Kompyuter savodxonligi</h3>
-<p id="computerText">Kompyuterdan foydalanishni o‘rganing.</p>
-</div>
+        <div class="card">
+            <h2 id="excelTitle">Microsoft Excel</h2>
+            <p id="excelDescription">
+                Elektron jadvallar, formulalar va diagrammalar bilan ishlashni o'rganing.
+            </p>
+            <a href="excel/10-lessons.md" id="excelLink">
+                10 ta darsni boshlash
+            </a>
+        </div>
 
-</div>
+        <div class="card">
+            <h2 id="economicsTitle">Iqtisodiyot</h2>
+            <p id="economicsDescription">
+                Iqtisodiyot fanining asosiy tushunchalari va mavzularini o'rganing.
+            </p>
+
+            <div class="lesson-list" id="economicsLessons">
+                <a href="economics/10-lessons.md#lesson-1">1-dars</a>
+                <a href="economics/10-lessons.md#lesson-2">2-dars</a>
+                <a href="economics/10-lessons.md#lesson-3">3-dars</a>
+                <a href="economics/10-lessons.md#lesson-4">4-dars</a>
+                <a href="economics/10-lessons.md#lesson-5">5-dars</a>
+                <a href="economics/10-lessons.md#lesson-6">6-dars</a>
+                <a href="economics/10-lessons.md#lesson-7">7-dars</a>
+                <a href="economics/10-lessons.md#lesson-8">8-dars</a>
+                <a href="economics/10-lessons.md#lesson-9">9-dars</a>
+                <a href="economics/10-lessons.md#lesson-10">10-dars</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 id="computerTitle">Kompyuter savodxonligi</h2>
+            <p id="computerDescription">
+                Kompyuter, Windows va internetdan foydalanish asoslarini o'rganing.
+            </p>
+        </div>
+
+    </div>
 </main>
 
-<footer id="footer">© 2026 Student Resources UZ | Barcha huquqlar himoyalangan</footer>
+<footer>
+    <p id="footerText">
+        Student Resources — Talabalar uchun bilim va ta'lim platformasi.
+    </p>
+</footer>
 
 <script>
-const lessonNames={
-uz:["1-dars. Iqtisodiyotga kirish →","2-dars. Bozor iqtisodiyoti →","3-dars. Talab va taklif →","4-dars. Raqobat →","5-dars. Pul va uning funksiyalari →","6-dars. Inflyatsiya →","7-dars. Banklar va kredit →","8-dars. Soliq va soliq siyosati →","9-dars. Yalpi ichki mahsulot →","10-dars. Ishsizlik va bandlik →"],
-ru:["Урок 1. Введение в экономику →","Урок 2. Рыночная экономика →","Урок 3. Спрос и предложение →","Урок 4. Конкуренция →","Урок 5. Деньги и их функции →","Урок 6. Инфляция →","Урок 7. Банки и кредит →","Урок 8. Налоги и налоговая политика →","Урок 9. Валовой внутренний продукт →","Урок 10. Безработица и занятость →"],
-en:["Lesson 1. Introduction to Economics →","Lesson 2. Market Economy →","Lesson 3. Supply and Demand →","Lesson 4. Competition →","Lesson 5. Money and Its Functions →","Lesson 6. Inflation →","Lesson 7. Banks and Credit →","Lesson 8. Taxes and Tax Policy →","Lesson 9. Gross Domestic Product →","Lesson 10. Unemployment and Employment →"]
+const translations = {
+    uz: {
+        siteTitle: "Student Resources",
+        siteDescription: "Talabalar uchun bepul ta'lim platformasi",
+        coursesTitle: "O'quv kurslari",
+        wordTitle: "Microsoft Word",
+        wordDescription: "Matnli hujjatlar yaratish, tahrirlash va bezashni o'rganing.",
+        wordLink: "10 ta darsni boshlash",
+        excelTitle: "Microsoft Excel",
+        excelDescription: "Elektron jadvallar, formulalar va diagrammalar bilan ishlashni o'rganing.",
+        excelLink: "10 ta darsni boshlash",
+        economicsTitle: "Iqtisodiyot",
+        economicsDescription: "Iqtisodiyot fanining asosiy tushunchalari va mavzularini o'rganing.",
+        computerTitle: "Kompyuter savodxonligi",
+        computerDescription: "Kompyuter, Windows va internetdan foydalanish asoslarini o'rganing.",
+        footerText: "Student Resources — Talabalar uchun bilim va ta'lim platformasi.",
+        lesson: "dars"
+    },
+    ru: {
+        siteTitle: "Student Resources",
+        siteDescription: "Бесплатная образовательная платформа для студентов",
+        coursesTitle: "Учебные курсы",
+        wordTitle: "Microsoft Word",
+        wordDescription: "Научитесь создавать, редактировать и оформлять текстовые документы.",
+        wordLink: "Начать 10 уроков",
+        excelTitle: "Microsoft Excel",
+        excelDescription: "Научитесь работать с электронными таблицами, формулами и диаграммами.",
+        excelLink: "Начать 10 уроков",
+        economicsTitle: "Экономика",
+        economicsDescription: "Изучайте основные понятия и темы экономики.",
+        computerTitle: "Компьютерная грамотность",
+        computerDescription: "Изучайте основы работы с компьютером, Windows и интернетом.",
+        footerText: "Student Resources — образовательная платформа для студентов.",
+        lesson: "Урок"
+    },
+    en: {
+        siteTitle: "Student Resources",
+        siteDescription: "Free educational platform for students",
+        coursesTitle: "Learning Courses",
+        wordTitle: "Microsoft Word",
+        wordDescription: "Learn to create, edit and format text documents.",
+        wordLink: "Start 10 lessons",
+        excelTitle: "Microsoft Excel",
+        excelDescription: "Learn to work with spreadsheets, formulas and charts.",
+        excelLink: "Start 10 lessons",
+        economicsTitle: "Economics",
+        economicsDescription: "Learn the basic concepts and topics of economics.",
+        computerTitle: "Computer Literacy",
+        computerDescription: "Learn the basics of computers, Windows and the internet.",
+        footerText: "Student Resources — Knowledge and education platform for students.",
+        lesson: "Lesson"
+    }
 };
 
-const translations={
-uz:{
-subtitle:"Talabalar uchun bepul ta'lim resurslari",welcome:"Xush kelibsiz!",
-description:"Talabalar uchun foydali darslar va o‘quv materiallari.",
-wordText:"Word dasturini noldan o‘rganing.",excelText:"Excel dasturini bosqichma-bosqich o‘rganing.",
-economicsTitle:"Iqtisodiyot",economicsText:"Iqtisodiyot fanidan 10 ta dars.",
-computerTitle:"Kompyuter savodxonligi",computerText:"Kompyuterdan foydalanishni o‘rganing.",
-wordLink:"Darsni o‘qish →",excelLink:"Darsni o‘qish →",
-footer:"© 2026 Student Resources UZ | Barcha huquqlar himoyalangan"
-},
-ru:{
-subtitle:"Бесплатные образовательные ресурсы для студентов",welcome:"Добро пожаловать!",
-description:"Полезные уроки и учебные материалы для студентов.",
-wordText:"Изучайте Word с нуля.",excelText:"Изучайте Excel шаг за шагом.",
-economicsTitle:"Экономика",economicsText:"10 уроков по экономике.",
-computerTitle:"Компьютерная грамотность",computerText:"Учитесь пользоваться компьютером.",
-wordLink:"Читать урок →",excelLink:"Читать урок →",
-footer:"© 2026 Student Resources UZ | Все права защищены"
-},
-en:{
-subtitle:"Free educational resources for students",welcome:"Welcome!",
-description:"Useful lessons and learning materials for students.",
-wordText:"Learn Word from the beginning.",excelText:"Learn Excel step by step.",
-economicsTitle:"Economics",economicsText:"10 economics lessons.",
-computerTitle:"Computer Literacy",computerText:"Learn how to use a computer.",
-wordLink:"Read lesson →",excelLink:"Read lesson →",
-footer:"© 2026 Student Resources UZ | All rights reserved"
-}
-};
+function changeLanguage(language) {
+    const t = translations[language];
 
-function changeLang(lang){
-const t=translations[lang];
-for(const id in t){
-const el=document.getElementById(id);
-if(el)el.textContent=t[id];
+    Object.keys(t).forEach(key => {
+        if (document.getElementById(key)) {
+            document.getElementById(key).textContent = t[key];
+        }
+    });
+
+    document.querySelectorAll("#economicsLessons a").forEach((link, index) => {
+        link.textContent = (index + 1) + "-" + t.lesson;
+    });
+
+    document.documentElement.lang = language;
 }
-document.querySelectorAll("#lessonList a").forEach((a,i)=>{
-a.textContent=lessonNames[lang][i];
-});
-document.documentElement.lang=lang;
-["uz","ru","en"].forEach(l=>{
-document.getElementById(l+"Btn").classList.toggle("active",l===lang);
-});
-}
+
+changeLanguage("uz");
 </script>
+
 </body>
 </html>
