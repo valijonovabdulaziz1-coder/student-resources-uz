@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -5,90 +6,126 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Resources UZ</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
-}
-header {
-  background: #123c69;
-  color: white;
-  padding: 35px 20px;
-  text-align: center;
-}
-main {
-  max-width: 1000px;
-  margin: 35px auto;
-  padding: 20px;
-}
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 20px;
-}
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 3px 12px #0001;
-}
-.card a {
-  display: inline-block;
-  background: #2563eb;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-}
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #123c69;
-  color: white;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#202b3c}
+header{background:#123b68;color:white;text-align:center;padding:35px 15px}
+header h1{margin:0 0 12px}
+nav{margin-top:22px}
+button{padding:11px 18px;margin:4px;border:0;border-radius:8px;cursor:pointer;font-weight:bold}
+button.active{background:#f4bd45;color:#172b45}
+main{max-width:1000px;margin:30px auto;padding:15px}
+h2{color:#123b68}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;padding:23px;border-radius:12px;box-shadow:0 3px 12px #0001}
+.card h3{margin-top:0;color:#174b7e}
+.card a{color:#1767b2;text-decoration:none;font-weight:bold}
+footer{text-align:center;padding:25px;color:#687386}
 </style>
 </head>
 <body>
 
 <header>
-<h1>🎓 Student Resources UZ</h1>
-<p>O‘zbekiston talabalari uchun bepul ta'lim platformasi</p>
+<h1 id="title">Student Resources UZ</h1>
+<p id="subtitle">Talabalar uchun bepul ta'lim resurslari</p>
+
+<nav>
+<button id="uzBtn" class="active" onclick="changeLang('uz')">O‘zbekcha</button>
+<button id="ruBtn" onclick="changeLang('ru')">Русский</button>
+<button id="enBtn" onclick="changeLang('en')">English</button>
+</nav>
 </header>
 
 <main>
-<h2>📚 Ta'lim bo‘limlari</h2>
+<h2 id="welcome">Xush kelibsiz!</h2>
+<p id="description">Bu saytda talabalar uchun foydali darslar va o‘quv materiallari joylashtirilgan.</p>
 
 <div class="cards">
 
 <div class="card">
-<h3>📄 Microsoft Word</h3>
-<p>Word dasturini noldan o‘rganing.</p>
-<a href="word/first-lesson.md">Darsni boshlash</a>
+<h3 id="wordTitle">Microsoft Word</h3>
+<p id="wordText">Word dasturini noldan o‘rganing.</p>
+<a href="word/first-lesson.md" id="wordLink">Darsni o‘qish →</a>
 </div>
 
 <div class="card">
-<h3>📊 Microsoft Excel</h3>
-<p>Excel formulalari va jadvallarni o‘rganing.</p>
-<a href="excel/first-lesson.md">Darsni boshlash</a>
+<h3 id="excelTitle">Microsoft Excel</h3>
+<p id="excelText">Excel dasturini bosqichma-bosqich o‘rganing.</p>
+<a href="excel/first-lesson.md" id="excelLink">Darsni o‘qish →</a>
 </div>
 
 <div class="card">
-<h3>💰 Iqtisodiyot</h3>
-<p>Iqtisodiyot bo‘yicha o‘quv materiallari.</p>
+<h3 id="economicsTitle">Iqtisodiyot</h3>
+<p id="economicsText">Iqtisodiyot faniga oid foydali ma'lumotlar.</p>
 </div>
 
 <div class="card">
-<h3>💻 Kompyuter savodxonligi</h3>
-<p>Kompyuter va texnologiyalarni o‘rganing.</p>
+<h3 id="computerTitle">Kompyuter savodxonligi</h3>
+<p id="computerText">Kompyuterdan foydalanishni o‘rganing.</p>
 </div>
 
 </div>
 </main>
 
-<footer>
-<p>© 2026 Student Resources UZ</p>
-</footer>
+<footer id="footer">© 2026 Student Resources UZ | Barcha huquqlar himoyalangan</footer>
+
+<script>
+const translations = {
+uz: {
+subtitle:"Talabalar uchun bepul ta'lim resurslari",
+welcome:"Xush kelibsiz!",
+description:"Bu saytda talabalar uchun foydali darslar va o‘quv materiallari joylashtirilgan.",
+wordText:"Word dasturini noldan o‘rganing.",
+excelText:"Excel dasturini bosqichma-bosqich o‘rganing.",
+economicsText:"Iqtisodiyot faniga oid foydali ma'lumotlar.",
+computerText:"Kompyuterdan foydalanishni o‘rganing.",
+wordLink:"Darsni o‘qish →",
+excelLink:"Darsni o‘qish →",
+footer:"© 2026 Student Resources UZ | Barcha huquqlar himoyalangan"
+},
+ru: {
+subtitle:"Бесплатные образовательные ресурсы для студентов",
+welcome:"Добро пожаловать!",
+description:"На этом сайте размещены полезные уроки и учебные материалы для студентов.",
+wordTitle:"Microsoft Word",
+wordText:"Изучайте Word с нуля.",
+excelText:"Изучайте Excel шаг за шагом.",
+economicsTitle:"Экономика",
+economicsText:"Полезные материалы по экономике.",
+computerTitle:"Компьютерная грамотность",
+computerText:"Учитесь пользоваться компьютером.",
+wordLink:"Читать урок →",
+excelLink:"Читать урок →",
+footer:"© 2026 Student Resources UZ | Все права защищены"
+},
+en: {
+subtitle:"Free educational resources for students",
+welcome:"Welcome!",
+description:"This website provides useful lessons and learning materials for students.",
+wordTitle:"Microsoft Word",
+wordText:"Learn Microsoft Word from the beginning.",
+excelText:"Learn Excel step by step.",
+economicsTitle:"Economics",
+economicsText:"Useful materials about economics.",
+computerTitle:"Computer Literacy",
+computerText:"Learn how to use a computer.",
+wordLink:"Read lesson →",
+excelLink:"Read lesson →",
+footer:"© 2026 Student Resources UZ | All rights reserved"
+}
+};
+
+function changeLang(lang) {
+const t = translations[lang];
+for (const id in t) {
+const element = document.getElementById(id);
+if (element) element.textContent = t[id];
+}
+document.documentElement.lang = lang;
+["uz","ru","en"].forEach(function(l) {
+document.getElementById(l+"Btn").classList.toggle("active",l===lang);
+});
+}
+</script>
 
 </body>
 </html>
