@@ -1,0 +1,148 @@
+
+name: Create Word and Excel Lessons
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  create-lessons:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repository
+        uses: actions/checkout@v4
+
+      - name: Create 20 lesson files
+        run: |
+          mkdir -p word excel
+
+          cat > word/lesson-1.md <<'EOF'
+          # 1-dars. Microsoft Word bilan tanishish
+          Microsoft Word matnli hujjatlar yaratish dasturi.
+          Amaliy topshiriq: yangi hujjat yarating va ismingizni yozing.
+          EOF
+
+          cat > word/lesson-2.md <<'EOF'
+          # 2-dars. Matn kiritish va tahrirlash
+          Matn yozish, o'chirish, nusxa olish va joylashtirish.
+          Amaliy topshiriq: 5 ta gap yozing va ularni tahrirlang.
+          EOF
+
+          cat > word/lesson-3.md <<'EOF'
+          # 3-dars. Shrift va matn ko'rinishi
+          Shrift turi, o'lchami, qalin, qiya va tagiga chizilgan matn.
+          Amaliy topshiriq: sarlavhani 16 o'lchamda yozing.
+          EOF
+
+          cat > word/lesson-4.md <<'EOF'
+          # 4-dars. Matnni joylashtirish
+          Matnni chapga, o'rtaga, o'ngga va ikki tomonga tekislash.
+          Amaliy topshiriq: 4 xil tekislash usulini sinab ko'ring.
+          EOF
+
+          cat > word/lesson-5.md <<'EOF'
+          # 5-dars. Abzats va intervallar
+          Abzats, satrlar oralig'i va matn oraliqlarini sozlash.
+          Amaliy topshiriq: 3 ta abzats yarating.
+          EOF
+
+          cat > word/lesson-6.md <<'EOF'
+          # 6-dars. Jadvallar bilan ishlash
+          Jadval yaratish, qator va ustun qo'shish, kataklarni bezash.
+          Amaliy topshiriq: 4 ustunli jadval yarating.
+          EOF
+
+          cat > word/lesson-7.md <<'EOF'
+          # 7-dars. Rasmlar va shakllar
+          Hujjatga rasm, shakl va boshqa obyektlarni joylashtirish.
+          Amaliy topshiriq: hujjatga bitta rasm qo'shing.
+          EOF
+
+          cat > word/lesson-8.md <<'EOF'
+          # 8-dars. Sahifa parametrlari
+          Hoshiyalar, sahifa yo'nalishi va qog'oz o'lchamini sozlash.
+          Amaliy topshiriq: sahifani albom holatiga o'tkazing.
+          EOF
+
+          cat > word/lesson-9.md <<'EOF'
+          # 9-dars. Ro'yxatlar yaratish
+          Raqamli va belgili ro'yxatlar bilan ishlash.
+          Amaliy topshiriq: 5 bandli ro'yxat yarating.
+          EOF
+
+          cat > word/lesson-10.md <<'EOF'
+          # 10-dars. Hujjatni saqlash va chop etish
+          DOCX va PDF formatida saqlash, chop etishga tayyorlash.
+          Amaliy topshiriq: hujjatni PDF formatida saqlang.
+          EOF
+
+          cat > excel/lesson-1.md <<'EOF'
+          # 1-dars. Microsoft Excel bilan tanishish
+          Excel elektron jadvallar bilan ishlash dasturi.
+          Amaliy topshiriq: yangi Excel kitobini oching.
+          EOF
+
+          cat > excel/lesson-2.md <<'EOF'
+          # 2-dars. Qator, ustun va kataklar
+          Excel qatorlari, ustunlari va kataklari bilan tanishish.
+          Amaliy topshiriq: A1 katagiga ismingizni yozing.
+          EOF
+
+          cat > excel/lesson-3.md <<'EOF'
+          # 3-dars. Ma'lumot kiritish
+          Matn, son, sana va vaqt ma'lumotlarini kiritish.
+          Amaliy topshiriq: 5 ta ism va 5 ta son kiriting.
+          EOF
+
+          cat > excel/lesson-4.md <<'EOF'
+          # 4-dars. Jadval yaratish
+          Jadval tuzish, chegaralar va katak ranglarini sozlash.
+          Amaliy topshiriq: 5 qatorli jadval yarating.
+          EOF
+
+          cat > excel/lesson-5.md <<'EOF'
+          # 5-dars. Asosiy formulalar
+          Qo'shish =A1+B1, ayirish =A1-B1, ko'paytirish =A1*B1, bo'lish =A1/B1.
+          Amaliy topshiriq: formulalar yordamida hisoblang.
+          EOF
+
+          cat > excel/lesson-6.md <<'EOF'
+          # 6-dars. SUM va AVERAGE
+          =SUM(A1:A10) yig'indini, =AVERAGE(A1:A10) o'rtacha qiymatni hisoblaydi.
+          Amaliy topshiriq: 10 ta son yig'indisini toping.
+          EOF
+
+          cat > excel/lesson-7.md <<'EOF'
+          # 7-dars. MIN va MAX
+          =MIN(A1:A10) eng kichik, =MAX(A1:A10) eng katta qiymatni topadi.
+          Amaliy topshiriq: 10 ta son orasidan eng kattasini toping.
+          EOF
+
+          cat > excel/lesson-8.md <<'EOF'
+          # 8-dars. Saralash va filtr
+          Ma'lumotlarni o'sish va kamayish tartibida saralash, filtr qo'llash.
+          Amaliy topshiriq: ismlar jadvaliga filtr qo'ying.
+          EOF
+
+          cat > excel/lesson-9.md <<'EOF'
+          # 9-dars. Diagrammalar
+          Ustunli va doiraviy diagrammalar yaratish.
+          Amaliy topshiriq: 5 ta qiymat asosida diagramma yarating.
+          EOF
+
+          cat > excel/lesson-10.md <<'EOF'
+          # 10-dars. Excel faylini saqlash
+          XLSX formatida saqlash, PDF ga o'tkazish va chop etish.
+          Amaliy topshiriq: jadvalni XLSX formatida saqlang.
+          EOF
+
+      - name: Save lesson files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add word/ excel/
+          git commit -m "Create 20 separate Word and Excel lessons" || echo "No changes"
+          git push
