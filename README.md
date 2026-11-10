@@ -3,133 +3,281 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Student Resources UZ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Resources — Ta'lim platformasi</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f1f5f9;color:#172554}
-header{background:#172554;color:white;text-align:center;padding:45px 15px}
-nav{background:#2448ad;padding:16px;text-align:center}
-nav a{color:white;text-decoration:none;margin:12px}
-.languages{padding:18px;text-align:center}
-button{padding:10px 20px;margin:5px;border:0;border-radius:8px;cursor:pointer;background:#2448ad;color:white}
-button:hover{background:#172554}
-main{max-width:1000px;margin:30px auto;padding:15px}
-.card{background:white;padding:25px;margin:18px 0;border-radius:15px;box-shadow:0 4px 14px #0001}
-.card a{color:#2452bd;font-weight:bold}
-footer{background:#172554;color:white;text-align:center;padding:25px}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: linear-gradient(135deg, #123c69, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+.languages {
+    text-align: center;
+    padding: 20px;
+}
+
+.languages button {
+    padding: 10px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.languages button:hover {
+    background: #123c69;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin: 20px 0 25px;
+    font-size: 27px;
+}
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    color: #1d4ed8;
+}
+
+.card p {
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.card a {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 11px 17px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.card a:hover {
+    background: #123c69;
+}
+
+.lesson-list {
+    margin-top: 15px;
+}
+
+.lesson-list a {
+    display: block;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+footer {
+    margin-top: 45px;
+    padding: 25px;
+    text-align: center;
+    background: #123c69;
+    color: white;
+}
+
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 25px;
+    }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>🎓 Student Resources UZ</h1>
-<p id="subtitle">O‘zbekiston talabalari uchun bepul ta'lim platformasi</p>
+    <h1 id="siteTitle">Student Resources</h1>
+    <p id="siteDescription">Talabalar uchun bepul ta'lim platformasi</p>
 </header>
 
-<nav>
-<a href="#" id="home">Bosh sahifa</a>
-<a href="#lessons" id="lessonsLink">Darslar</a>
-<a href="#about" id="aboutLink">Biz haqimizda</a>
-</nav>
-
 <div class="languages">
-<button onclick="changeLang('uz')">🇺🇿 O‘zbekcha</button>
-<button onclick="changeLang('ru')">🇷🇺 Русский</button>
-<button onclick="changeLang('en')">🇬🇧 English</button>
+    <button onclick="changeLanguage('uz')">O'zbekcha</button>
+    <button onclick="changeLanguage('ru')">Русский</button>
+    <button onclick="changeLanguage('en')">English</button>
 </div>
 
-<main>
-<div class="card">
-<h2 id="welcome">Talabalar uchun foydali platforma</h2>
-<p id="description">Bu yerda Word, Excel, iqtisodiyot va kompyuter bo‘yicha o‘quv materiallarini topishingiz mumkin.</p>
-</div>
+<main class="container">
 
-<h2 id="materials">📚 O‘quv materiallari</h2>
+    <h2 class="section-title" id="coursesTitle">O'quv kurslari</h2>
 
-<div class="card">
-<h3 id="wordTitle">📄 Microsoft Word</h3>
-<p id="wordDesc">Word dasturini noldan o‘rganing.</p>
-<a href="word/first-lesson.md" id="wordLink">Word darsini ochish</a>
-</div>
+    <div class="courses">
 
-<div class="card">
-<h3 id="excelTitle">📊 Microsoft Excel</h3>
-<p id="excelDesc">Excel dasturini noldan o‘rganing.</p>
-<a href="excel/first-lesson.md" id="excelLink">Excel darsini ochish</a>
-</div>
+        <div class="card">
+            <h2 id="wordTitle">Microsoft Word</h2>
+            <p id="wordDescription">
+                Matnli hujjatlar yaratish, tahrirlash va bezashni o'rganing.
+            </p>
+            <a href="word/10-lessons.md" id="wordLink">
+                10 ta darsni boshlash
+            </a>
+        </div>
 
-<div class="card">
-<h3 id="economyTitle">💰 Iqtisodiyot</h3>
-<p id="economyDesc">Iqtisodiyot fanidan o‘quv materiallari.</p>
-</div>
+        <div class="card">
+            <h2 id="excelTitle">Microsoft Excel</h2>
+            <p id="excelDescription">
+                Elektron jadvallar, formulalar va diagrammalar bilan ishlashni o'rganing.
+            </p>
+            <a href="excel/10-lessons.md" id="excelLink">
+                10 ta darsni boshlash
+            </a>
+        </div>
 
-<div class="card">
-<h3 id="computerTitle">💻 Kompyuter savodxonligi</h3>
-<p id="computerDesc">Kompyuter va texnologiyalarni o‘rganing.</p>
-</div>
+        <div class="card">
+            <h2 id="economicsTitle">Iqtisodiyot</h2>
+            <p id="economicsDescription">
+                Iqtisodiyot fanining asosiy tushunchalari va mavzularini o'rganing.
+            </p>
 
-<div class="card" id="about">
-<h2 id="aboutTitle">Biz haqimizda</h2>
-<p id="aboutDesc">Biz talabalar uchun bepul bilim va ta'lim resurslarini taqdim etamiz.</p>
-</div>
+            <div class="lesson-list" id="economicsLessons">
+                <a href="economics/10-lessons.md#lesson-1">1-dars</a>
+                <a href="economics/10-lessons.md#lesson-2">2-dars</a>
+                <a href="economics/10-lessons.md#lesson-3">3-dars</a>
+                <a href="economics/10-lessons.md#lesson-4">4-dars</a>
+                <a href="economics/10-lessons.md#lesson-5">5-dars</a>
+                <a href="economics/10-lessons.md#lesson-6">6-dars</a>
+                <a href="economics/10-lessons.md#lesson-7">7-dars</a>
+                <a href="economics/10-lessons.md#lesson-8">8-dars</a>
+                <a href="economics/10-lessons.md#lesson-9">9-dars</a>
+                <a href="economics/10-lessons.md#lesson-10">10-dars</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 id="computerTitle">Kompyuter savodxonligi</h2>
+            <p id="computerDescription">
+                Kompyuter, Windows va internetdan foydalanish asoslarini o'rganing.
+            </p>
+        </div>
+
+    </div>
 </main>
 
 <footer>
-<p>© 2026 Student Resources UZ</p>
-<p id="footerText">Barcha huquqlar himoyalangan.</p>
+    <p id="footerText">
+        Student Resources — Talabalar uchun bilim va ta'lim platformasi.
+    </p>
 </footer>
 
 <script>
 const translations = {
-uz: {
-subtitle:"O‘zbekiston talabalari uchun bepul ta'lim platformasi",
-home:"Bosh sahifa",lessonsLink:"Darslar",aboutLink:"Biz haqimizda",
-welcome:"Talabalar uchun foydali platforma",
-description:"Bu yerda Word, Excel, iqtisodiyot va kompyuter bo‘yicha o‘quv materiallarini topishingiz mumkin.",
-materials:"📚 O‘quv materiallari",
-wordTitle:"📄 Microsoft Word",wordDesc:"Word dasturini noldan o‘rganing.",wordLink:"Word darsini ochish",
-excelTitle:"📊 Microsoft Excel",excelDesc:"Excel dasturini noldan o‘rganing.",excelLink:"Excel darsini ochish",
-economyTitle:"💰 Iqtisodiyot",economyDesc:"Iqtisodiyot fanidan o‘quv materiallari.",
-computerTitle:"💻 Kompyuter savodxonligi",computerDesc:"Kompyuter va texnologiyalarni o‘rganing.",
-aboutTitle:"Biz haqimizda",aboutDesc:"Biz talabalar uchun bepul bilim va ta'lim resurslarini taqdim etamiz.",
-footerText:"Barcha huquqlar himoyalangan."
-},
-ru: {
-subtitle:"Бесплатная образовательная платформа для студентов Узбекистана",
-home:"Главная",lessonsLink:"Уроки",aboutLink:"О нас",
-welcome:"Полезная платформа для студентов",
-description:"Здесь вы найдёте учебные материалы по Word, Excel, экономике и компьютерам.",
-materials:"📚 Учебные материалы",
-wordTitle:"📄 Microsoft Word",wordDesc:"Изучайте Word с нуля.",wordLink:"Открыть урок Word",
-excelTitle:"📊 Microsoft Excel",excelDesc:"Изучайте Excel с нуля.",excelLink:"Открыть урок Excel",
-economyTitle:"💰 Экономика",economyDesc:"Учебные материалы по экономике.",
-computerTitle:"💻 Компьютерная грамотность",computerDesc:"Изучайте компьютеры и технологии.",
-aboutTitle:"О нас",aboutDesc:"Мы предоставляем бесплатные образовательные ресурсы для студентов.",
-footerText:"Все права защищены."
-},
-en: {
-subtitle:"Free educational platform for students in Uzbekistan",
-home:"Home",lessonsLink:"Lessons",aboutLink:"About us",
-welcome:"A useful platform for students",
-description:"Find learning materials about Word, Excel, economics and computers here.",
-materials:"📚 Learning materials",
-wordTitle:"📄 Microsoft Word",wordDesc:"Learn Word from scratch.",wordLink:"Open Word lesson",
-excelTitle:"📊 Microsoft Excel",excelDesc:"Learn Excel from scratch.",excelLink:"Open Excel lesson",
-economyTitle:"💰 Economics",economyDesc:"Educational materials about economics.",
-computerTitle:"💻 Computer literacy",computerDesc:"Learn computers and technology.",
-aboutTitle:"About us",aboutDesc:"We provide free educational resources for students.",
-footerText:"All rights reserved."
-}
+    uz: {
+        siteTitle: "Student Resources",
+        siteDescription: "Talabalar uchun bepul ta'lim platformasi",
+        coursesTitle: "O'quv kurslari",
+        wordTitle: "Microsoft Word",
+        wordDescription: "Matnli hujjatlar yaratish, tahrirlash va bezashni o'rganing.",
+        wordLink: "10 ta darsni boshlash",
+        excelTitle: "Microsoft Excel",
+        excelDescription: "Elektron jadvallar, formulalar va diagrammalar bilan ishlashni o'rganing.",
+        excelLink: "10 ta darsni boshlash",
+        economicsTitle: "Iqtisodiyot",
+        economicsDescription: "Iqtisodiyot fanining asosiy tushunchalari va mavzularini o'rganing.",
+        computerTitle: "Kompyuter savodxonligi",
+        computerDescription: "Kompyuter, Windows va internetdan foydalanish asoslarini o'rganing.",
+        footerText: "Student Resources — Talabalar uchun bilim va ta'lim platformasi.",
+        lesson: "dars"
+    },
+    ru: {
+        siteTitle: "Student Resources",
+        siteDescription: "Бесплатная образовательная платформа для студентов",
+        coursesTitle: "Учебные курсы",
+        wordTitle: "Microsoft Word",
+        wordDescription: "Научитесь создавать, редактировать и оформлять текстовые документы.",
+        wordLink: "Начать 10 уроков",
+        excelTitle: "Microsoft Excel",
+        excelDescription: "Научитесь работать с электронными таблицами, формулами и диаграммами.",
+        excelLink: "Начать 10 уроков",
+        economicsTitle: "Экономика",
+        economicsDescription: "Изучайте основные понятия и темы экономики.",
+        computerTitle: "Компьютерная грамотность",
+        computerDescription: "Изучайте основы работы с компьютером, Windows и интернетом.",
+        footerText: "Student Resources — образовательная платформа для студентов.",
+        lesson: "Урок"
+    },
+    en: {
+        siteTitle: "Student Resources",
+        siteDescription: "Free educational platform for students",
+        coursesTitle: "Learning Courses",
+        wordTitle: "Microsoft Word",
+        wordDescription: "Learn to create, edit and format text documents.",
+        wordLink: "Start 10 lessons",
+        excelTitle: "Microsoft Excel",
+        excelDescription: "Learn to work with spreadsheets, formulas and charts.",
+        excelLink: "Start 10 lessons",
+        economicsTitle: "Economics",
+        economicsDescription: "Learn the basic concepts and topics of economics.",
+        computerTitle: "Computer Literacy",
+        computerDescription: "Learn the basics of computers, Windows and the internet.",
+        footerText: "Student Resources — Knowledge and education platform for students.",
+        lesson: "Lesson"
+    }
 };
 
-function changeLang(lang) {
-const t=translations[lang];
-for (const id in t) {
-document.getElementById(id).textContent=t[id];
+function changeLanguage(language) {
+    const t = translations[language];
+
+    Object.keys(t).forEach(key => {
+        if (document.getElementById(key)) {
+            document.getElementById(key).textContent = t[key];
+        }
+    });
+
+    document.querySelectorAll("#economicsLessons a").forEach((link, index) => {
+        link.textContent = (index + 1) + "-" + t.lesson;
+    });
+
+    document.documentElement.lang = language;
 }
-document.documentElement.lang=lang;
-}
+
+changeLanguage("uz");
 </script>
+
 </body>
 </html>
