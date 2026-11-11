@@ -26,11 +26,11 @@ This project is for university students, teachers, beginners, and anyone interes
 Everyone is welcome to contribute!
 
 You can help by:
-Adding useful educational materials
-Improving documentation
-Correcting mistakes
-Translating resources into Uzbek
-Sharing useful learning resources
+- Adding useful educational materials
+- Improving documentation
+- Correcting mistakes
+- Translating resources into Uzbek
+- Sharing useful learning resources
 
 ## 📌 Project Status
 
