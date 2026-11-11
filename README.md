@@ -10,12 +10,12 @@ Our mission is to make education more accessible for students in Uzbekistan by p
 
 ## 📖 What You Can Find Here
 
-- Economics and business study materials
-- Microsoft Word tutorials
-- Microsoft Excel tutorials
-- Computer and technology guides
-- Independent study resources
-- Useful educational websites
+Economics and business study materials
+Microsoft Word tutorials
+Microsoft Excel tutorials
+Computer and technology guides
+Independent study resources
+Useful educational websites
 
 ## 🌍 Who Is This Project For?
 
@@ -26,11 +26,11 @@ This project is for university students, teachers, beginners, and anyone interes
 Everyone is welcome to contribute!
 
 You can help by:
-- Adding useful educational materials
-- Improving documentation
-- Correcting mistakes
-- Translating resources into Uzbek
-- Sharing useful learning resources
+Adding useful educational materials
+Improving documentation
+Correcting mistakes
+Translating resources into Uzbek
+Sharing useful learning resources
 
 ## 📌 Project Status
 
